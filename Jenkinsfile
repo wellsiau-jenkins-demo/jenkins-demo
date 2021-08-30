@@ -20,7 +20,7 @@ spec:
     - name: IMAGE_TAG
       value: ${BUILD_NUMBER}
   - name: kaniko
-    image: gcr.io/kaniko-project/executor:debug-539ddefcae3fd6b411a95982a830d987f4214251
+    image: gcr.io/kaniko-project/executor:latest
     imagePullPolicy: Always
     command:
     - /busybox/cat
