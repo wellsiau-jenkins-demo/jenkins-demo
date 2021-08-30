@@ -53,12 +53,13 @@ spec:
       echo "2.Test Stage"
     }
     stage('Deploy') {
-      container('kustomize')
+      container('kustomize') {
         echo "5. Deploy Stage"
         if (env.BRANCH_NAME == 'master') 
         sh "sed -i 's/<BUILD_TAG>/${build_tag}/' k8s.yaml"
         sh "sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         sh "kubectl apply -f k8s.yaml --record"
+      }
     }
   }
 }
