@@ -46,7 +46,7 @@ spec:
     def gitBranch = myRepo.GIT_BRANCH
     stage('Build with Kaniko') {
       container('kaniko') {
-        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --destination=harbor.sixwords.dev/library/py-bot:latest --destination=harbor.sixwords.dev/library/py-bot:v$BUILD_NUMBER'
+        sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --destination=harbor.sixwords.dev/library/jenkins-demo:latest --destination=harbor.sixwords.dev/library/jenkins-demo:v$BUILD_NUMBER'
       }
     }
             }
