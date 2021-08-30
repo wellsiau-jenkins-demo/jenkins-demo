@@ -51,6 +51,7 @@ spec:
     }
     stage('Test') {
       echo "2.Test Stage"
+    }
     stage('Deploy') {
       container('kustomize')
         echo "5. Deploy Stage"
@@ -59,4 +60,5 @@ spec:
         sh "sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         sh "kubectl apply -f k8s.yaml --record"
     }
+  }
 }
