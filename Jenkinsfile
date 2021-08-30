@@ -49,9 +49,6 @@ spec:
         sh '/kaniko/executor -f `pwd`/Dockerfile -c `pwd` --skip-tls-verify --destination=harbor.sixwords.dev/library/jenkins/jenkins-demo:latest --destination=harbor.sixwords.dev/library/jenkins/jenkins-demo:v$BUILD_NUMBER'
       }
     }
-            }
-        }
-    }
     stage('Test') {
       echo "2.Test Stage"
     stage('Deploy') {
